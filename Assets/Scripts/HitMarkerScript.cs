@@ -5,8 +5,8 @@ public class HitMarkerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        float x = Random.Range(-300, 300);
-        float y = Random.Range(-300, 300);
+        float x = Random.Range(-250, 250);
+        float y = Random.Range(-250, 250);
         transform.localPosition = new Vector3(x, y);
     }
 	

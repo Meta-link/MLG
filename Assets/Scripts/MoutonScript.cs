@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MoutonScript : MonoBehaviour {
 
@@ -10,11 +11,16 @@ public class MoutonScript : MonoBehaviour {
     private Animator anim;
     private GameObject canvas;
 
+    private int counter = 0;
+    private int total = 0;
+
     // Use this for initialization
     void Start () {
         body = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         canvas = GameObject.Find("Canvas");
+        total = GameObject.FindGameObjectsWithTag("Ennemy").Length;
+        canvas.GetComponentsInChildren<Text>()[2].text = "/ "+total;
     }
 	
 	// Update is called once per frame
@@ -56,7 +62,18 @@ public class MoutonScript : MonoBehaviour {
             Instantiate(Resources.Load("ExplosionEmitter"), collider.transform.position, Quaternion.identity);
             GameObject bob = Instantiate(Resources.Load("Hitmarker")) as GameObject;
             bob.transform.SetParent(canvas.transform);
+            counter += 1;
+            canvas.GetComponentsInChildren<Text>()[1].text = counter.ToString();
             Destroy(collider.gameObject);
+
+            if(counter == total)
+            {
+                GetComponent<AudioSource>().Play();
+                foreach (Image i in canvas.GetComponentsInChildren<Image>())
+                {
+                    i.enabled = true;
+                }
+            }
         }
     }
 }
