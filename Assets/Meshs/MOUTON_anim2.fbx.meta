@@ -144,8 +144,8 @@ ModelImporter:
     - serializedVersion: 16
       name: AttackMouton
       takeName: AttackMouton
-      firstFrame: -1
-      lastFrame: 0
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

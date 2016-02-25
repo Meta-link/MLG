@@ -10,10 +10,10 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2016
 		Month: 02
-		Day: 24
-		Hour: 17
-		Minute: 04
-		Second: 47
+		Day: 25
+		Hour: 15
+		Minute: 11
+		Second: 42
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2016-02-24 17:04:47:000"
+CreationTime: "2016-02-25 15:11:42:000"
 Creator: "Blender version 2.69 (sub 0)"
 
 ; Object definitions
@@ -5218,8 +5218,8 @@ Takes:  {
 	}
 	Take: "AttackMouton" {
 		FileName: "AttackMouton.tak"
-		LocalTime: -1924423249,0
-		ReferenceTime: -1924423249,0
+		LocalTime: -1924423249,1924423250
+		ReferenceTime: -1924423249,1924423250
 
 		;Models animation
 		;----------------------------------------------------

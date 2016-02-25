@@ -40,6 +40,12 @@ public class MoutonScript : MonoBehaviour {
         if(Input.GetButtonDown("Jump"))
         {
             anim.SetBool("Attack", true);
+            Debug.Log("down");
+        }
+        else if(Input.GetButtonUp("Jump") && anim.GetBool("Attack"))
+        {
+            anim.SetBool("Attack", false);
+            Debug.Log("up");
         }
     }
 }
