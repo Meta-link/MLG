@@ -28,13 +28,18 @@ public class MoutonScript : MonoBehaviour {
         body.velocity = v;
         body.transform.localEulerAngles = new Vector3(body.transform.localEulerAngles.x, body.transform.localEulerAngles.y + vx, body.transform.localEulerAngles.z);
 
-        /*if(!anim.GetBool("Walk") && vz != 0)
+        if(!anim.GetBool("Walk") && vz != 0)
         {
             anim.SetBool("Walk", true);
         }
         else if(vz == 0)
         {
             anim.SetBool("Walk", false);
-        }*/
+        }
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            anim.SetBool("Attack", true);
+        }
     }
 }
