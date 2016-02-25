@@ -8,11 +8,13 @@ public class MoutonScript : MonoBehaviour {
 
     private Rigidbody body;
     private Animator anim;
+    private GameObject canvas;
 
     // Use this for initialization
     void Start () {
         body = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        canvas = GameObject.Find("Canvas");
     }
 	
 	// Update is called once per frame
@@ -40,12 +42,21 @@ public class MoutonScript : MonoBehaviour {
         if(Input.GetButtonDown("Jump"))
         {
             anim.SetBool("Attack", true);
-            Debug.Log("down");
         }
         else if(Input.GetButtonUp("Jump") && anim.GetBool("Attack"))
         {
             anim.SetBool("Attack", false);
-            Debug.Log("up");
+        }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.tag == "Ennemy" && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            Instantiate(Resources.Load("ExplosionEmitter"), collider.transform.position, Quaternion.identity);
+            GameObject bob = Instantiate(Resources.Load("Hitmarker")) as GameObject;
+            bob.transform.SetParent(canvas.transform);
+            Destroy(collider.gameObject);
         }
     }
 }

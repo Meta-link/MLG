@@ -15,7 +15,6 @@ public class ShakeCamera : MonoBehaviour {
 	{
 		Shaking = true;
 		OriginalRot = transform.rotation;
-
 	}
 	
 	
@@ -52,7 +51,7 @@ public class ShakeCamera : MonoBehaviour {
         {
             DoShake(Intensity);
         }
-
+        
         if (ShakeIntensity > 0)
 		{
 
@@ -66,7 +65,7 @@ public class ShakeCamera : MonoBehaviour {
 		else if (Shaking)
 		{
 			Shaking = false;
-		}
+        }
 
 	}
 
